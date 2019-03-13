@@ -14,11 +14,11 @@ modal.addEventListener('click', function(e) {
   if (e.target.classList.contains('button')) {
     modal.style.display = 'none';
     overlay.style.display = 'none';
-    starGame();
+    startGame();
   }
 })
 
-function starGame() {
+function startGame() {
   let fullTetris = document.createElement('div');
   fullTetris.classList.add('full-tetris');
 
@@ -152,6 +152,7 @@ function starGame() {
         if (document.querySelector(`[posX = "${r}"][posY = "15"]`).classList.contains('set')) {
           clearInterval(interval);
           alert(`Игра окончена. Ваши очки: ${score}`);
+          window.location.reload();
           break;
         }
       }
